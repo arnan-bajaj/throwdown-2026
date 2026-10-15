@@ -67,6 +67,8 @@ section+section{border-top:1px solid var(--rule)}
 .record dt{font-size:14px;color:#b9bcc2}
 .record dd{margin:0;font-family:"Barlow Condensed",sans-serif;font-weight:700;font-size:44px;line-height:1}
 .record dd.hi{color:var(--fuel)}
+.record .rot dd,.record .rot dt span{transition:opacity .3s ease}
+.record .rot.fade dd,.record .rot.fade dt span{opacity:0}
 .record p{font-size:14px;color:#b9bcc2;margin:16px 0 0}
 @media (max-width:860px){.intro-grid{grid-template-columns:1fr;gap:36px}}
 
@@ -134,36 +136,17 @@ dialog .bar{display:flex;justify-content:space-between;align-items:center;gap:12
 dialog button{font:600 15px "Barlow",sans-serif;color:#fff;background:transparent;border:2px solid rgba(255,255,255,.5);border-radius:4px;padding:8px 14px;cursor:pointer}
 dialog button:hover{border-color:#fff}
 
-/* ---------- scoring ---------- */
-.dark{background:var(--ink);color:#fff}
-.dark .muted{color:#b9bcc2}
-.dark a{color:var(--fuel)}
-.timeline{margin:34px 0 10px}
-.tl{display:flex;height:64px;border-radius:6px;overflow:hidden;gap:2px}
-.tl>div{display:flex;flex-direction:column;justify-content:center;padding:0 10px;min-width:0;background:#2a2c31;font-family:"Barlow Condensed",sans-serif;font-weight:600;font-size:18px;line-height:1.05;white-space:nowrap}
-.tl>div small{font-family:"Barlow",sans-serif;font-weight:500;font-size:13px;color:#b9bcc2}
-.tl .auto{background:#3a3d44}
-.tl .end{background:#3a3d44}
-.hubs{display:flex;gap:2px;margin-top:6px}
-.hubs>div{display:flex;justify-content:center;gap:6px;padding:8px 0;font-size:13px;color:#b9bcc2}
-.dot{width:14px;height:14px;border-radius:50%;display:inline-block}
-.dot.on.rd{background:var(--red)}.dot.on.bl{background:#3b7ae0}
-.dot.off{background:transparent;border:2px solid #5b5f66}
-.tl-key{display:flex;flex-wrap:wrap;gap:8px 24px;font-size:14px;color:#b9bcc2;margin-top:6px}
-.tl-key .dot{vertical-align:-2px;margin-right:6px}
-@media (max-width:760px){
-  .tl{height:auto;flex-wrap:wrap}
-  .tl>div{flex:1 1 30% !important;padding:10px}
-  .hubs{display:none}
-}
-.points{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:44px}
-.points h3{font-size:24px;color:#fff}
-.points table{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums}
-.points td{padding:7px 0;border-top:1px solid #33363c}
-.points td:last-child{text-align:right;font-family:"Barlow Condensed",sans-serif;font-weight:700;font-size:20px;color:var(--fuel)}
-@media (max-width:860px){.points{grid-template-columns:1fr}}
-
 /* ---------- watchtower ---------- */
+.dark{background:var(--ink);color:#fff}
+.dark .btn{border-color:#fff;color:#fff}
+.dark .btn:hover{background:#fff;color:var(--ink)}
+.dark .btn.primary{border-color:var(--red)}
+.dark .btn.primary:hover{background:var(--red-deep);border-color:var(--red-deep);color:#fff}
+.dark .flow li{border-top-color:#33363c}
+.dark .flow li::before{background:var(--fuel);color:var(--ink)}
+.dark .flow span,.dark .credit,.dark .shots figcaption{color:#b9bcc2}
+.dark .shots img{border-color:#33363c}
+.dark .note{background:#24262b}
 .wt-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:56px;align-items:start}
 .flow{list-style:none;padding:0;margin:26px 0 0;counter-reset:f}
 .flow li{counter-increment:f;display:grid;grid-template-columns:40px 1fr;gap:4px 14px;padding:14px 0;border-top:1px solid var(--rule)}
@@ -193,7 +176,7 @@ footer{padding:28px 0;font-size:14px;color:var(--steel)}
 
 <header class="hero" style="background-image:url('https://lh3.googleusercontent.com/d/1s7Dl5Azbfa16qyqFOc8PVxOeSWgDnhfL=w2000')" role="banner">
   <div class="wrap">
-    <div class="host"><span aria-hidden="true"></span>FRC offseason scrimmage hosted by System Overload Robotics, Team 6059</div>
+    <div class="host"><span aria-hidden="true"></span>FRC offseason scrimmage hosted by System Overload Robotics, Team 6059 and Highlander Robotics, Team 8033</div>
     <h1>10th Street Throwdown<small>October 10, 2026</small></h1>
     <dl class="facts">
       <div><dt>Where</dt><dd>Piedmont Makers Field, Oakland</dd></div>
@@ -219,10 +202,10 @@ footer{padding:28px 0;font-size:14px;color:var(--steel)}
     <aside class="record" aria-label="Event numbers">
       <h3>By the numbers</h3>
       <dl>
-        <div><dt>Qual matches</dt><dd>9</dd></div>
+        <div><dt>Qual matches</dt><dd>10</dd></div>
         <div><dt>High score (Q9)</dt><dd class="hi">563</dd></div>
         <div><dt>Avg alliance score</dt><dd>288</dd></div>
-        <div><dt>6059 qual record</dt><dd>6–2</dd></div>
+        <div class="rot" aria-live="polite"><dt><span>6059</span> qual record</dt><dd>6–2</dd></div>
       </dl>
       <p>From qualification results posted to The Blue Alliance.</p>
     </aside>
@@ -243,7 +226,7 @@ footer{padding:28px 0;font-size:14px;color:var(--steel)}
       <li><a href="https://www.thebluealliance.com/team/5940/2026" target="_blank" rel="noopener"><div class="num">5940</div><div class="name">BREAD</div><div class="city">Redwood City, CA</div></a></li>
       <li class="us"><a href="https://www.thebluealliance.com/team/6059/2026" target="_blank" rel="noopener"><div class="num">6059</div><div class="name">System Overload Robotics</div><div class="city">Livermore, CA</div></a></li>
       <li><a href="https://www.thebluealliance.com/team/7419/2026" target="_blank" rel="noopener"><div class="num">7419</div><div class="name">TECH Support</div><div class="city">Dublin, CA</div></a></li>
-      <li><a href="https://www.thebluealliance.com/team/8033/2026" target="_blank" rel="noopener"><div class="num">8033</div><div class="name">Highlander Robotics</div><div class="city">Piedmont, CA</div></a></li>
+      <li class="us"><a href="https://www.thebluealliance.com/team/8033/2026" target="_blank" rel="noopener"><div class="num">8033</div><div class="name">Highlander Robotics</div><div class="city">Piedmont, CA</div></a></li>
       <li><a href="https://www.thebluealliance.com/team/8793/2026" target="_blank" rel="noopener"><div class="num">8793</div><div class="name">Pumpkin Bots</div><div class="city">Half Moon Bay, CA</div></a></li>
     </ul>
   </div>
@@ -290,73 +273,16 @@ footer{padding:28px 0;font-size:14px;color:var(--steel)}
       <button type="button" class="w4" data-full="https://lh3.googleusercontent.com/d/1Puxog9nEGnB4UhQo2Gz85a38QPHwaZKh=w1800" aria-label="View larger: Fuel piled up and ready for the next match"><img src="https://lh3.googleusercontent.com/d/1Puxog9nEGnB4UhQo2Gz85a38QPHwaZKh=w900" alt="Fuel piled up and ready for the next match" loading="lazy" referrerpolicy="no-referrer"></button>
     </div>
     <div class="albums">
-      <a href="https://photos.google.com/share/AF1QipMrMY8HgN22SHk1Yjf4Ynv98GFUGUnvikuWs5qV_OaY1Oz5A--1N9LlTDpPbAA5mQ?key=WFVydFd6V08wUG92ZXpTUWZTTVdWWWJ3ekJDWGx3" target="_blank" rel="noopener">Match photos album</a>
+      <a href="https://photos.google.com/share/AF1QipMrMY8HgN22SHk1Yjf4Ynv98GFUGUnvikuWs5qV_OaY1Oz5A--1N9LlTDpPbAA5mQ?key=WFVydFd6V08wUG92ZXpTUWZTTVdWWWJ3ekJDWGx3" target="_blank" rel="noopener">Match photos by Maggie Pino</a>
       <a href="https://photos.app.goo.gl/PfYZmsMyG3FGkPTf7" target="_blank" rel="noopener">Pit photos by Henry Rosenberg</a>
-      <a href="https://drive.google.com/drive/folders/1UQTGG9rB0-U0g5cugSdib7Atafv3l6_R" target="_blank" rel="noopener">Full event folder on Google Drive</a>
+      <a href="https://drive.google.com/drive/folders/1UQTGG9rB0-U0g5cugSdib7Atafv3l6_R" target="_blank" rel="noopener">General and BTS photos by Keren Khouri</a>
     </div>
-    <p class="credit">Photos by Henry Rosenberg and event volunteers.</p>
+    <p class="credit">Photos by Maggie Pino, Henry Rosenberg, and Keren Khouri.</p>
   </div>
 </section>
 
-<section class="dark">
-  <div class="wrap">
-    <h2>How a REBUILT match is scored</h2>
-    <p class="lede">Every fuel ball that lands in your alliance's hub while it's active is worth a point. The catch is that the hubs take turns: during the four teleop shifts, only one alliance can score at a time.</p>
-    <div class="timeline" aria-label="Match timeline">
-      <div class="tl">
-        <div class="auto" style="flex:20">Auto<small>20 s</small></div>
-        <div style="flex:10">Transition<small>10 s</small></div>
-        <div style="flex:25">Shift 1<small>25 s</small></div>
-        <div style="flex:25">Shift 2<small>25 s</small></div>
-        <div style="flex:25">Shift 3<small>25 s</small></div>
-        <div style="flex:25">Shift 4<small>25 s</small></div>
-        <div class="end" style="flex:30">Endgame<small>30 s</small></div>
-      </div>
-      <div class="hubs" aria-hidden="true">
-        <div style="flex:20"><i class="dot on rd"></i><i class="dot on bl"></i></div>
-        <div style="flex:10"><i class="dot on rd"></i><i class="dot on bl"></i></div>
-        <div style="flex:25"><i class="dot off"></i><i class="dot on bl"></i></div>
-        <div style="flex:25"><i class="dot on rd"></i><i class="dot off"></i></div>
-        <div style="flex:25"><i class="dot off"></i><i class="dot on bl"></i></div>
-        <div style="flex:25"><i class="dot on rd"></i><i class="dot off"></i></div>
-        <div style="flex:30"><i class="dot on rd"></i><i class="dot on bl"></i></div>
-      </div>
-      <div class="tl-key"><span><i class="dot on rd"></i>Hub active</span><span><i class="dot off"></i>Hub off</span><span>Example where red won auto: the alliance that scores more fuel in auto has its hub turned off first.</span></div>
-    </div>
-    <div class="points">
-      <div>
-        <h3>Fuel</h3>
-        <table>
-          <tr><td>Ball in an active hub</td><td>1</td></tr>
-          <tr><td>Grace window after a hub turns off</td><td>3 s</td></tr>
-        </table>
-        <p class="muted" style="margin-top:12px">Balls that go into a hub while it's off score nothing.</p>
-      </div>
-      <div>
-        <h3>Tower climbs</h3>
-        <table>
-          <tr><td>Auto, Level 1</td><td>15</td></tr>
-          <tr><td>Endgame, Level 1</td><td>10</td></tr>
-          <tr><td>Endgame, Level 2</td><td>20</td></tr>
-          <tr><td>Endgame, Level 3</td><td>30</td></tr>
-        </table>
-      </div>
-      <div>
-        <h3>Fouls and ranking points</h3>
-        <table>
-          <tr><td>Minor foul, to opponent</td><td>5</td></tr>
-          <tr><td>Major foul, to opponent</td><td>15</td></tr>
-          <tr><td>Win / tie</td><td>3 / 1 RP</td></tr>
-          <tr><td>Energized: 100+ fuel</td><td>+1 RP</td></tr>
-          <tr><td>Supercharged: 360+ fuel</td><td>+1 RP</td></tr>
-          <tr><td>Traversal: 50+ tower points</td><td>+1 RP</td></tr>
-        </table>
-      </div>
-    </div>
-  </div>
-</section>
 
-<section id="watchtower">
+<section id="watchtower" class="dark">
   <div class="wrap wt-grid">
     <div>
       <h2>Watchtower FMS</h2>
@@ -413,6 +339,14 @@ footer{padding:28px 0;font-size:14px;color:var(--steel)}
 </dialog>
 
 <script>
+(function(){
+  var recs=[['6059','6–2'],['5940','6–1'],['3045','4–1'],['8033','1–4']];
+  var el=document.querySelector('.record .rot'),t=el.querySelector('dt span'),d=el.querySelector('dd'),i=0;
+  setInterval(function(){
+    el.classList.add('fade');
+    setTimeout(function(){i=(i+1)%recs.length;t.textContent=recs[i][0];d.textContent=recs[i][1];el.classList.remove('fade');},300);
+  },3000);
+})();
 (function(){
   var btns=[].slice.call(document.querySelectorAll('.gallery button'));
   var dlg=document.getElementById('lb'),img=document.getElementById('lb-img'),n=document.getElementById('lb-n'),cur=0;
