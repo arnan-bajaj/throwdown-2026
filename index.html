@@ -1,0 +1,430 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>10th Street Throwdown 2026 | System Overload Robotics</title>
+<meta name="description" content="10th Street Throwdown, an FRC REBUILT offseason scrimmage hosted by System Overload Robotics (6059) on October 10, 2026 in Oakland, CA.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --floor:#F1F2EF;      /* page */
+  --panel:#FFFFFF;
+  --ink:#16171A;
+  --steel:#5B5F66;      /* secondary text */
+  --rule:#D6D8D3;
+  --red:#CE2026;        /* System Overload red, also red alliance */
+  --red-deep:#8E1217;
+  --blue:#1D5DBA;       /* blue alliance */
+  --fuel:#F3CE1E;       /* the game piece */
+  --wrap:1120px;
+  --gutter:clamp(16px,4vw,40px);
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--floor);color:var(--ink);font:400 17px/1.6 "Barlow",system-ui,sans-serif}
+img{max-width:100%;display:block}
+a{color:var(--red-deep);text-underline-offset:3px}
+a:hover{color:var(--red)}
+:focus-visible{outline:3px solid var(--blue);outline-offset:3px}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 var(--gutter)}
+h1,h2,h3{font-family:"Barlow Condensed",sans-serif;font-weight:700;line-height:1;margin:0;letter-spacing:-.005em}
+h2{font-size:clamp(40px,6vw,64px);margin-bottom:.35em}
+h3{font-size:26px;margin-bottom:.4em}
+p{margin:0 0 1em;max-width:68ch}
+.lede{font-size:20px;line-height:1.55}
+.muted{color:var(--steel)}
+section{padding:clamp(56px,8vw,96px) 0}
+section+section{border-top:1px solid var(--rule)}
+
+/* ---------- hero ---------- */
+.hero{position:relative;min-height:min(86vh,760px);display:flex;align-items:flex-end;color:#fff;background:#222 center/cover no-repeat;isolation:isolate}
+.hero::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(20,20,22,.15) 0%,rgba(20,20,22,.25) 45%,rgba(20,20,22,.88) 100%)}
+.hero .wrap{width:100%;padding-bottom:clamp(28px,5vw,56px)}
+.host{display:flex;align-items:center;gap:10px;font-weight:600;font-size:15px;margin-bottom:18px}
+.host span{display:inline-block;width:14px;height:14px;border-radius:50%;background:var(--fuel);box-shadow:inset -3px -3px 0 rgba(0,0,0,.18)}
+.hero h1{font-size:clamp(64px,13vw,168px);font-weight:800;line-height:.86;letter-spacing:-.01em;max-width:9ch;text-wrap:balance}
+.hero h1 small{display:block;font-size:.34em;font-weight:700;color:var(--fuel);letter-spacing:0;margin-top:.25em}
+.facts{display:grid;grid-template-columns:repeat(4,auto);justify-content:start;gap:12px 40px;margin:28px 0 0;padding:20px 0 0;border-top:2px solid rgba(255,255,255,.3)}
+.facts div{min-width:0}
+.facts dt{font-size:14px;color:rgba(255,255,255,.72)}
+.facts dd{margin:0;font-family:"Barlow Condensed",sans-serif;font-weight:600;font-size:24px;line-height:1.15}
+.facts a{color:#fff}
+@media (max-width:760px){.facts{grid-template-columns:1fr 1fr}}
+
+/* ---------- intro ---------- */
+.intro-grid{display:grid;grid-template-columns:1.6fr 1fr;gap:56px;align-items:start}
+.cta-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:8px}
+.btn{display:inline-block;padding:12px 20px;border-radius:4px;font-weight:600;text-decoration:none;border:2px solid var(--ink);color:var(--ink);background:transparent}
+.btn:hover{background:var(--ink);color:#fff}
+.btn.primary{background:var(--red);border-color:var(--red);color:#fff}
+.btn.primary:hover{background:var(--red-deep);border-color:var(--red-deep)}
+.record{background:var(--ink);color:#fff;border-radius:6px;padding:26px 26px 22px}
+.record h3{color:#fff;font-size:22px;margin-bottom:14px}
+.record dl{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:0}
+.record dt{font-size:14px;color:#b9bcc2}
+.record dd{margin:0;font-family:"Barlow Condensed",sans-serif;font-weight:700;font-size:44px;line-height:1}
+.record dd.hi{color:var(--fuel)}
+.record p{font-size:14px;color:#b9bcc2;margin:16px 0 0}
+@media (max-width:860px){.intro-grid{grid-template-columns:1fr;gap:36px}}
+
+/* ---------- teams ---------- */
+.teams{list-style:none;margin:28px 0 0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:2px;background:var(--rule);border:2px solid var(--rule);border-radius:6px;overflow:hidden}
+.teams li{background:var(--panel);padding:16px 18px 18px}
+.teams a{text-decoration:none;color:inherit;display:block}
+.teams .num{font-family:"Barlow Condensed",sans-serif;font-weight:800;font-size:40px;line-height:1}
+.teams .name{font-weight:600;line-height:1.3;margin-top:4px}
+.teams .city{font-size:14px;color:var(--steel)}
+.teams li.us{background:var(--ink);color:#fff}
+.teams li.us .num{color:var(--fuel)}
+.teams li.us .city{color:#b9bcc2}
+.teams a:hover .name{text-decoration:underline}
+
+/* ---------- results ---------- */
+.matches{margin-top:28px;display:grid;gap:10px}
+.m{display:grid;grid-template-columns:52px 1fr 1fr;align-items:stretch;background:var(--panel);border-radius:6px;overflow:hidden;border:1px solid var(--rule)}
+.m .qn{display:flex;align-items:center;justify-content:center;font-family:"Barlow Condensed",sans-serif;font-weight:700;font-size:20px;background:#e6e7e3;color:var(--steel)}
+.side{position:relative;padding:12px 16px;display:flex;align-items:center;justify-content:space-between;gap:12px;min-width:0}
+.side .bar{position:absolute;top:0;bottom:0;opacity:.13;z-index:0}
+.side.r .bar{right:0;background:var(--red)}
+.side.b .bar{left:0;background:var(--blue)}
+.side.b{flex-direction:row-reverse;border-left:2px solid var(--floor)}
+.side>*{position:relative;z-index:1}
+.side .ts{display:flex;flex-wrap:wrap;gap:4px 12px;font-weight:500;font-variant-numeric:tabular-nums}
+.side.b .ts{justify-content:flex-end}
+.side .ts .me{font-weight:700;box-shadow:inset 0 -5px 0 var(--fuel)}
+.side .sc{font-family:"Barlow Condensed",sans-serif;font-weight:700;font-size:34px;line-height:1;font-variant-numeric:tabular-nums}
+.side.r .sc{color:var(--red)}
+.side.b .sc{color:var(--blue)}
+.side.lose .sc{opacity:.45}
+.legend{display:flex;flex-wrap:wrap;gap:8px 24px;margin-top:18px;font-size:14px;color:var(--steel)}
+.legend i{display:inline-block;vertical-align:-2px;margin-right:6px}
+.legend .k1{width:22px;height:4px;background:var(--fuel);vertical-align:2px}
+@media (max-width:640px){
+  .m{grid-template-columns:40px 1fr}
+  .m .qn{grid-row:span 2;font-size:17px}
+  .side.b{flex-direction:row;border-left:0;border-top:2px solid var(--floor)}
+  .side.b .bar{left:auto;right:0}
+  .side.b .ts{justify-content:flex-start}
+  .side .sc{font-size:28px}
+}
+
+/* ---------- photos ---------- */
+.gallery{margin-top:28px;display:grid;grid-template-columns:repeat(12,1fr);grid-auto-rows:clamp(120px,15vw,190px);gap:8px}
+.gallery button{all:unset;cursor:zoom-in;position:relative;overflow:hidden;border-radius:4px;background:#d9dbd6}
+.gallery button:focus-visible{outline:3px solid var(--blue);outline-offset:2px}
+.gallery img{width:100%;height:100%;object-fit:cover;transition:transform .35s ease}
+.gallery button:hover img{transform:scale(1.03)}
+.gallery .w6{grid-column:span 6}.gallery .w4{grid-column:span 4}.gallery .w3{grid-column:span 3}.gallery .w8{grid-column:span 8}
+.gallery .h2{grid-row:span 2}
+@media (max-width:760px){
+  .gallery{grid-template-columns:repeat(2,1fr);grid-auto-rows:150px}
+  .gallery .w6,.gallery .w4,.gallery .w3,.gallery .w8{grid-column:span 1}
+  .gallery .wide{grid-column:span 2}
+  .gallery .h2{grid-row:span 1}
+}
+.albums{display:flex;flex-wrap:wrap;gap:10px 28px;margin-top:22px}
+.credit{font-size:14px;color:var(--steel);margin-top:14px}
+dialog{border:0;padding:0;background:transparent;max-width:min(1400px,94vw);max-height:92vh}
+dialog::backdrop{background:rgba(12,12,14,.9)}
+dialog img{max-width:100%;max-height:86vh;object-fit:contain;border-radius:4px}
+dialog .bar{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:10px;color:#fff}
+dialog button{font:600 15px "Barlow",sans-serif;color:#fff;background:transparent;border:2px solid rgba(255,255,255,.5);border-radius:4px;padding:8px 14px;cursor:pointer}
+dialog button:hover{border-color:#fff}
+
+/* ---------- scoring ---------- */
+.dark{background:var(--ink);color:#fff}
+.dark .muted{color:#b9bcc2}
+.dark a{color:var(--fuel)}
+.timeline{margin:34px 0 10px}
+.tl{display:flex;height:64px;border-radius:6px;overflow:hidden;gap:2px}
+.tl>div{display:flex;flex-direction:column;justify-content:center;padding:0 10px;min-width:0;background:#2a2c31;font-family:"Barlow Condensed",sans-serif;font-weight:600;font-size:18px;line-height:1.05;white-space:nowrap}
+.tl>div small{font-family:"Barlow",sans-serif;font-weight:500;font-size:13px;color:#b9bcc2}
+.tl .auto{background:#3a3d44}
+.tl .end{background:#3a3d44}
+.hubs{display:flex;gap:2px;margin-top:6px}
+.hubs>div{display:flex;justify-content:center;gap:6px;padding:8px 0;font-size:13px;color:#b9bcc2}
+.dot{width:14px;height:14px;border-radius:50%;display:inline-block}
+.dot.on.rd{background:var(--red)}.dot.on.bl{background:#3b7ae0}
+.dot.off{background:transparent;border:2px solid #5b5f66}
+.tl-key{display:flex;flex-wrap:wrap;gap:8px 24px;font-size:14px;color:#b9bcc2;margin-top:6px}
+.tl-key .dot{vertical-align:-2px;margin-right:6px}
+@media (max-width:760px){
+  .tl{height:auto;flex-wrap:wrap}
+  .tl>div{flex:1 1 30% !important;padding:10px}
+  .hubs{display:none}
+}
+.points{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:44px}
+.points h3{font-size:24px;color:#fff}
+.points table{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums}
+.points td{padding:7px 0;border-top:1px solid #33363c}
+.points td:last-child{text-align:right;font-family:"Barlow Condensed",sans-serif;font-weight:700;font-size:20px;color:var(--fuel)}
+@media (max-width:860px){.points{grid-template-columns:1fr}}
+
+/* ---------- watchtower ---------- */
+.wt-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:56px;align-items:start}
+.flow{list-style:none;padding:0;margin:26px 0 0;counter-reset:f}
+.flow li{counter-increment:f;display:grid;grid-template-columns:40px 1fr;gap:4px 14px;padding:14px 0;border-top:1px solid var(--rule)}
+.flow li::before{content:counter(f);grid-row:span 2;width:32px;height:32px;border-radius:50%;background:var(--ink);color:#fff;font:700 17px/32px "Barlow Condensed",sans-serif;text-align:center}
+.flow b{font-weight:700}
+.flow span{color:var(--steel);grid-column:2}
+.shots{display:grid;grid-template-columns:2.2fr 1fr;gap:12px;align-items:start}
+.shots figure{margin:0}
+.shots img{border-radius:6px;border:1px solid var(--rule);background:#fff}
+.shots figcaption{font-size:14px;color:var(--steel);margin-top:8px}
+.note{margin-top:28px;padding:18px 20px;background:var(--panel);border-left:5px solid var(--fuel);border-radius:0 6px 6px 0}
+.note p{margin:0}
+@media (max-width:860px){.wt-grid{grid-template-columns:1fr;gap:36px}}
+
+/* ---------- thanks ---------- */
+.thanks{background:var(--red);color:#fff;border-top:0 !important}
+.thanks h2{color:#fff}
+.thanks a{color:#fff}
+.thanks .btn{border-color:#fff;color:#fff}
+.thanks .btn:hover{background:#fff;color:var(--red-deep)}
+footer{padding:28px 0;font-size:14px;color:var(--steel)}
+
+@media (prefers-reduced-motion:reduce){*{transition:none !important}}
+</style>
+</head>
+<body>
+
+<header class="hero" style="background-image:url('https://lh3.googleusercontent.com/d/1s7Dl5Azbfa16qyqFOc8PVxOeSWgDnhfL=w2000')" role="banner">
+  <div class="wrap">
+    <div class="host"><span aria-hidden="true"></span>FRC offseason scrimmage hosted by System Overload Robotics, Team 6059</div>
+    <h1>10th Street Throwdown<small>October 10, 2026</small></h1>
+    <dl class="facts">
+      <div><dt>Where</dt><dd>Piedmont Makers Field, Oakland</dd></div>
+      <div><dt>Game</dt><dd>FRC REBUILT</dd></div>
+      <div><dt>Teams</dt><dd>11 from across the Bay Area</dd></div>
+      <div><dt>Full results</dt><dd><a href="https://www.thebluealliance.com/event/2026catstd" target="_blank" rel="noopener">The Blue Alliance</a></dd></div>
+    </dl>
+  </div>
+</header>
+
+<main>
+<section>
+  <div class="wrap intro-grid">
+    <div>
+      <h2>A full day of matches on a real field</h2>
+      <p class="lede">On Saturday, October 10, System Overload Robotics hosted 10th Street Throwdown at 3100 E 10th Street in Oakland, the practice field of Highlander Robotics (8033). Eleven teams brought their REBUILT robots for a day of qualification matches, fuel everywhere, and practice for the drive teams ahead of fall competitions.</p>
+      <p>Scrimmages like this are where drive teams get reps, pit crews find what breaks, and new members see a match up close for the first time. We ran the whole event ourselves, from the schedule and refereeing to a field management system our team built for scoring the hubs.</p>
+      <div class="cta-row">
+        <a class="btn primary" href="https://www.thebluealliance.com/event/2026catstd" target="_blank" rel="noopener">See results on The Blue Alliance</a>
+        <a class="btn" href="#photos">Jump to photos</a>
+      </div>
+    </div>
+    <aside class="record" aria-label="Event numbers">
+      <h3>By the numbers</h3>
+      <dl>
+        <div><dt>Qual matches</dt><dd>9</dd></div>
+        <div><dt>High score (Q9)</dt><dd class="hi">563</dd></div>
+        <div><dt>Avg alliance score</dt><dd>288</dd></div>
+        <div><dt>6059 qual record</dt><dd>6–2</dd></div>
+      </dl>
+      <p>From qualification results posted to The Blue Alliance.</p>
+    </aside>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>The teams</h2>
+    <p class="muted">Thank you to every team that made the trip.</p>
+    <ul class="teams">
+      <li><a href="https://www.thebluealliance.com/team/114/2026" target="_blank" rel="noopener"><div class="num">114</div><div class="name">Eaglestrike</div><div class="city">Los Altos, CA</div></a></li>
+      <li><a href="https://www.thebluealliance.com/team/2035/2026" target="_blank" rel="noopener"><div class="num">2035</div><div class="name">The Rockin&#x27; Bots</div><div class="city">Carmel, CA</div></a></li>
+      <li><a href="https://www.thebluealliance.com/team/3045/2026" target="_blank" rel="noopener"><div class="num">3045</div><div class="name">Gear Gremlins</div><div class="city">San Mateo, CA</div></a></li>
+      <li><a href="https://www.thebluealliance.com/team/4159/2026" target="_blank" rel="noopener"><div class="num">4159</div><div class="name">CardinalBotics</div><div class="city">San Francisco, CA</div></a></li>
+      <li><a href="https://www.thebluealliance.com/team/4669/2026" target="_blank" rel="noopener"><div class="num">4669</div><div class="name">Galileo Robotics</div><div class="city">San Francisco, CA</div></a></li>
+      <li><a href="https://www.thebluealliance.com/team/5026/2026" target="_blank" rel="noopener"><div class="num">5026</div><div class="name">Iron Panthers</div><div class="city">Burlingame, CA</div></a></li>
+      <li><a href="https://www.thebluealliance.com/team/5940/2026" target="_blank" rel="noopener"><div class="num">5940</div><div class="name">BREAD</div><div class="city">Redwood City, CA</div></a></li>
+      <li class="us"><a href="https://www.thebluealliance.com/team/6059/2026" target="_blank" rel="noopener"><div class="num">6059</div><div class="name">System Overload Robotics</div><div class="city">Livermore, CA</div></a></li>
+      <li><a href="https://www.thebluealliance.com/team/7419/2026" target="_blank" rel="noopener"><div class="num">7419</div><div class="name">TECH Support</div><div class="city">Dublin, CA</div></a></li>
+      <li><a href="https://www.thebluealliance.com/team/8033/2026" target="_blank" rel="noopener"><div class="num">8033</div><div class="name">Highlander Robotics</div><div class="city">Piedmont, CA</div></a></li>
+      <li><a href="https://www.thebluealliance.com/team/8793/2026" target="_blank" rel="noopener"><div class="num">8793</div><div class="name">Pumpkin Bots</div><div class="city">Half Moon Bay, CA</div></a></li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Qualification results</h2>
+    <p class="muted">Each row is one match: red alliance on the left, blue on the right. Shaded bars scale with the score.</p>
+    <div class="matches">
+      <div class="m"><div class="qn">Q1</div><div class="side r win"><i class="bar" style="width:93.6%"></i><div class="ts" aria-label="Red alliance"><span>5026</span><span class="me">6059</span><span>5940</span></div><div class="sc" aria-label="Red score 527">527</div></div><div class="side b lose"><i class="bar" style="width:49.4%"></i><div class="ts" aria-label="Blue alliance"><span>8033</span><span>8793</span><span>4669</span></div><div class="sc" aria-label="Blue score 278">278</div></div></div>
+      <div class="m"><div class="qn">Q3</div><div class="side r lose"><i class="bar" style="width:64.7%"></i><div class="ts" aria-label="Red alliance"><span>114</span><span>8793</span><span>5026</span></div><div class="sc" aria-label="Red score 364">364</div></div><div class="side b win"><i class="bar" style="width:80.6%"></i><div class="ts" aria-label="Blue alliance"><span>5940</span><span class="me">6059</span><span>8033</span></div><div class="sc" aria-label="Blue score 454">454</div></div></div>
+      <div class="m"><div class="qn">Q4</div><div class="side r win"><i class="bar" style="width:78.9%"></i><div class="ts" aria-label="Red alliance"><span>7419</span><span>3045</span><span>4159</span></div><div class="sc" aria-label="Red score 444">444</div></div><div class="side b lose"><i class="bar" style="width:11.0%"></i><div class="ts" aria-label="Blue alliance"><span>2035</span><span>4669</span><span class="me">6059</span></div><div class="sc" aria-label="Blue score 62">62</div></div></div>
+      <div class="m"><div class="qn">Q5</div><div class="side r lose"><i class="bar" style="width:14.9%"></i><div class="ts" aria-label="Red alliance"><span>5026</span><span>8033</span><span>8793</span></div><div class="sc" aria-label="Red score 84">84</div></div><div class="side b win"><i class="bar" style="width:59.5%"></i><div class="ts" aria-label="Blue alliance"><span>5940</span><span>114</span><span>7419</span></div><div class="sc" aria-label="Blue score 335">335</div></div></div>
+      <div class="m"><div class="qn">Q6</div><div class="side r lose"><i class="bar" style="width:10.1%"></i><div class="ts" aria-label="Red alliance"><span>8033</span><span>7419</span><span>4669</span></div><div class="sc" aria-label="Red score 57">57</div></div><div class="side b win"><i class="bar" style="width:69.4%"></i><div class="ts" aria-label="Blue alliance"><span>3045</span><span class="me">6059</span><span>2035</span></div><div class="sc" aria-label="Blue score 391">391</div></div></div>
+      <div class="m"><div class="qn">Q7</div><div class="side r win"><i class="bar" style="width:80.8%"></i><div class="ts" aria-label="Red alliance"><span>3045</span><span>5940</span><span>5026</span></div><div class="sc" aria-label="Red score 455">455</div></div><div class="side b lose"><i class="bar" style="width:30.7%"></i><div class="ts" aria-label="Blue alliance"><span>8793</span><span class="me">6059</span><span>114</span></div><div class="sc" aria-label="Blue score 173">173</div></div></div>
+      <div class="m"><div class="qn">Q8</div><div class="side r win"><i class="bar" style="width:25.0%"></i><div class="ts" aria-label="Red alliance"><span class="me">6059</span><span>4669</span><span>8793</span></div><div class="sc" aria-label="Red score 141">141</div></div><div class="side b lose"><i class="bar" style="width:4.8%"></i><div class="ts" aria-label="Blue alliance"><span>5940</span><span>2035</span><span>8033</span></div><div class="sc" aria-label="Blue score 27">27</div></div></div>
+      <div class="m"><div class="qn">Q9</div><div class="side r lose"><i class="bar" style="width:10.1%"></i><div class="ts" aria-label="Red alliance"><span>2035</span><span>8793</span><span>114</span></div><div class="sc" aria-label="Red score 57">57</div></div><div class="side b win"><i class="bar" style="width:100.0%"></i><div class="ts" aria-label="Blue alliance"><span>5940</span><span class="me">6059</span><span>3045</span></div><div class="sc" aria-label="Blue score 563">563</div></div></div>
+      <div class="m"><div class="qn">Q10</div><div class="side r lose"><i class="bar" style="width:62.0%"></i><div class="ts" aria-label="Red alliance"><span>3045</span><span>4669</span><span>114</span></div><div class="sc" aria-label="Red score 349">349</div></div><div class="side b win"><i class="bar" style="width:75.0%"></i><div class="ts" aria-label="Blue alliance"><span class="me">6059</span><span>2035</span><span>5940</span></div><div class="sc" aria-label="Blue score 422">422</div></div></div>
+    </div>
+    <div class="legend"><span><i class="k1"></i>6059</span><span>Faded score: losing alliance</span><span>Complete schedule, rankings, and OPRs are on <a href="https://www.thebluealliance.com/event/2026catstd" target="_blank" rel="noopener">The Blue Alliance</a>.</span></div>
+  </div>
+</section>
+
+<section id="photos">
+  <div class="wrap">
+    <h2>Photos</h2>
+    <p class="muted">Select any photo to see it larger.</p>
+    <div class="gallery">
+      <button type="button" class="w8 h2 wide" data-full="https://lh3.googleusercontent.com/pw/AP1GczNOq2cMCiU75u97Wj5OZ3_xBQvWdQbhfvbcmGD2JQnBZJsSeO6s6SoMGjdlTZZi05UxG04lv8PYmk9Dwp5rez5nW4RP1HAmIcQb-G2csPp21xELFto=w1800" aria-label="View larger: Robots driving through fuel during a match"><img src="https://lh3.googleusercontent.com/pw/AP1GczNOq2cMCiU75u97Wj5OZ3_xBQvWdQbhfvbcmGD2JQnBZJsSeO6s6SoMGjdlTZZi05UxG04lv8PYmk9Dwp5rez5nW4RP1HAmIcQb-G2csPp21xELFto=w900" alt="Robots driving through fuel during a match" loading="lazy" referrerpolicy="no-referrer"></button>
+      <button type="button" class="w4 h2" data-full="https://lh3.googleusercontent.com/pw/AP1GczO82Coc4AAWhyr6McyxsEiH0SpZ9hzgSmE8Mc2IG2pzCPc9s7gkehH_XiZx9lwyOvKimrYExCeI550Fw_WUcSXU9P-FVmI1MocunU6Tlh6qMEy8yYH8=w1800" aria-label="View larger: A Galileo Robotics student holding fuel balls"><img src="https://lh3.googleusercontent.com/pw/AP1GczO82Coc4AAWhyr6McyxsEiH0SpZ9hzgSmE8Mc2IG2pzCPc9s7gkehH_XiZx9lwyOvKimrYExCeI550Fw_WUcSXU9P-FVmI1MocunU6Tlh6qMEy8yYH8=w900" alt="A Galileo Robotics student holding fuel balls" loading="lazy" referrerpolicy="no-referrer"></button>
+      <button type="button" class="w4" data-full="https://lh3.googleusercontent.com/pw/AP1GczMlzCEHPe6fXSwD5O6kLlpNFhCpN3FHJWBxpc9jWGPzJFxeTYpJOtgu5fhdpatnM1msjfDz3r_pampuvCUiKnslM8kD8xVJn-4D2Zd4ki1W0f73S9c=w1800" aria-label="View larger: Robots on the field during a qualification match"><img src="https://lh3.googleusercontent.com/pw/AP1GczMlzCEHPe6fXSwD5O6kLlpNFhCpN3FHJWBxpc9jWGPzJFxeTYpJOtgu5fhdpatnM1msjfDz3r_pampuvCUiKnslM8kD8xVJn-4D2Zd4ki1W0f73S9c=w900" alt="Robots on the field during a qualification match" loading="lazy" referrerpolicy="no-referrer"></button>
+      <button type="button" class="w4" data-full="https://lh3.googleusercontent.com/pw/AP1GczMFve3M1HI1w7D8Je6EsNuq7Fwy-DFOi2x-xBfGvPVsIeLr3si5lZu7bW4YXkDiTMWb2u-TgVDnwY-b2pGd3fcXXnZsmCb45nd2DlkWDjg3Ed8QfUk=w1800" aria-label="View larger: Team 4669&#x27;s robot surrounded by fuel"><img src="https://lh3.googleusercontent.com/pw/AP1GczMFve3M1HI1w7D8Je6EsNuq7Fwy-DFOi2x-xBfGvPVsIeLr3si5lZu7bW4YXkDiTMWb2u-TgVDnwY-b2pGd3fcXXnZsmCb45nd2DlkWDjg3Ed8QfUk=w900" alt="Team 4669&#x27;s robot surrounded by fuel" loading="lazy" referrerpolicy="no-referrer"></button>
+      <button type="button" class="w4" data-full="https://lh3.googleusercontent.com/pw/AP1GczOf1vVUaF4fRwZsKuloxBTqeDV-qu1-kQSpW3zft1yDPwOVFSCqMUF0_rd6qMjTwSgkf4lG-gzPz12lrl-UgOY-AqcRDL8BETR8fGv9yJzw-jFsWCK7=w1800" aria-label="View larger: Iron Panthers members working on their robot in the pits"><img src="https://lh3.googleusercontent.com/pw/AP1GczOf1vVUaF4fRwZsKuloxBTqeDV-qu1-kQSpW3zft1yDPwOVFSCqMUF0_rd6qMjTwSgkf4lG-gzPz12lrl-UgOY-AqcRDL8BETR8fGv9yJzw-jFsWCK7=w900" alt="Iron Panthers members working on their robot in the pits" loading="lazy" referrerpolicy="no-referrer"></button>
+      <button type="button" class="w6 h2 wide" data-full="https://lh3.googleusercontent.com/d/1hK1DBseiw2GxJX5l13ty9tFNSKiOAJyY=w1800" aria-label="View larger: Volunteers and students resetting fuel on the field"><img src="https://lh3.googleusercontent.com/d/1hK1DBseiw2GxJX5l13ty9tFNSKiOAJyY=w900" alt="Volunteers and students resetting fuel on the field" loading="lazy" referrerpolicy="no-referrer"></button>
+      <button type="button" class="w3" data-full="https://lh3.googleusercontent.com/pw/AP1GczOqlo2ZLXM1kwmhQQZCboHTQkXfXvdtwiom1_oA4krmDy5ECWwGetLr8Purb0l9Sa39r2S2dgkmcvRxPj75V_UT8AeAHgUDAHCeo2hdLMHR173EIzA=w1800" aria-label="View larger: Robots near the hub mid-match"><img src="https://lh3.googleusercontent.com/pw/AP1GczOqlo2ZLXM1kwmhQQZCboHTQkXfXvdtwiom1_oA4krmDy5ECWwGetLr8Purb0l9Sa39r2S2dgkmcvRxPj75V_UT8AeAHgUDAHCeo2hdLMHR173EIzA=w900" alt="Robots near the hub mid-match" loading="lazy" referrerpolicy="no-referrer"></button>
+      <button type="button" class="w3" data-full="https://lh3.googleusercontent.com/pw/AP1GczOnbde7hZ9_bejS2m8R30mnNt1m86Hti8cMofW6WJy0yqhB6oAuOmA08qopRg4QHQJUZb6mim9RwtbM-ZzCNh2rDyjsAvkmWvOaBgp51oH6TFPM1oJs=w1800" aria-label="View larger: The emcee announcing a match"><img src="https://lh3.googleusercontent.com/pw/AP1GczOnbde7hZ9_bejS2m8R30mnNt1m86Hti8cMofW6WJy0yqhB6oAuOmA08qopRg4QHQJUZb6mim9RwtbM-ZzCNh2rDyjsAvkmWvOaBgp51oH6TFPM1oJs=w900" alt="The emcee announcing a match" loading="lazy" referrerpolicy="no-referrer"></button>
+      <button type="button" class="w3" data-full="https://lh3.googleusercontent.com/pw/AP1GczPjvcZtOnvlH70fzeBVa66v7fVXCnM85TO3ags2-uLEGzRKqIQo3D1TaEoVpGXpXIsh5sA_mCvsNGSVKWPp_J1atfFneqmFE9Zquu-KWjyzZwHRn-E=w1800" aria-label="View larger: Fuel flying toward the hub"><img src="https://lh3.googleusercontent.com/pw/AP1GczPjvcZtOnvlH70fzeBVa66v7fVXCnM85TO3ags2-uLEGzRKqIQo3D1TaEoVpGXpXIsh5sA_mCvsNGSVKWPp_J1atfFneqmFE9Zquu-KWjyzZwHRn-E=w900" alt="Fuel flying toward the hub" loading="lazy" referrerpolicy="no-referrer"></button>
+      <button type="button" class="w3" data-full="https://lh3.googleusercontent.com/pw/AP1GczOaDyEdZfIg-e4C53rq9mWKF9H2Awsoth0EhnYKdpGhUf2SNvk3QntyXLDUOsgoYTWdWG4RahbOHwrgwcR_eRb7Apk_6-Hq81QfOG-wbWjnj__fhFJx=w1800" aria-label="View larger: Robots and fuel beside the field"><img src="https://lh3.googleusercontent.com/pw/AP1GczOaDyEdZfIg-e4C53rq9mWKF9H2Awsoth0EhnYKdpGhUf2SNvk3QntyXLDUOsgoYTWdWG4RahbOHwrgwcR_eRb7Apk_6-Hq81QfOG-wbWjnj__fhFJx=w900" alt="Robots and fuel beside the field" loading="lazy" referrerpolicy="no-referrer"></button>
+      <button type="button" class="w4" data-full="https://lh3.googleusercontent.com/d/1AKmVl6r2tLhmZ-RjtFcQRXwN0DrevGET=w1800" aria-label="View larger: Teams on the field between matches"><img src="https://lh3.googleusercontent.com/d/1AKmVl6r2tLhmZ-RjtFcQRXwN0DrevGET=w900" alt="Teams on the field between matches" loading="lazy" referrerpolicy="no-referrer"></button>
+      <button type="button" class="w4" data-full="https://lh3.googleusercontent.com/d/1MEnATBI4e3l2fsRwQE68ppRCCC2hYGm8=w1800" aria-label="View larger: Students checking a phone together in the pits"><img src="https://lh3.googleusercontent.com/d/1MEnATBI4e3l2fsRwQE68ppRCCC2hYGm8=w900" alt="Students checking a phone together in the pits" loading="lazy" referrerpolicy="no-referrer"></button>
+      <button type="button" class="w4" data-full="https://lh3.googleusercontent.com/pw/AP1GczPcwcpP9gWVzW2ZL9-ft2lautEgShNoMi5PrkvYYJDbe4FHHD1w-GbXajyNQUODwRmuirShRcwRmEnoCsERr8AtMviInaNF-Chm-RUMMbO2CGMsfL_o=w1800" aria-label="View larger: An Iron Panthers member at a laptop in the pits"><img src="https://lh3.googleusercontent.com/pw/AP1GczPcwcpP9gWVzW2ZL9-ft2lautEgShNoMi5PrkvYYJDbe4FHHD1w-GbXajyNQUODwRmuirShRcwRmEnoCsERr8AtMviInaNF-Chm-RUMMbO2CGMsfL_o=w900" alt="An Iron Panthers member at a laptop in the pits" loading="lazy" referrerpolicy="no-referrer"></button>
+      <button type="button" class="w8 wide" data-full="https://lh3.googleusercontent.com/d/1I19OKZUTWm1WreSkXrRqgw51H5N8vYL-=w1800" aria-label="View larger: Wide view of the field during reset"><img src="https://lh3.googleusercontent.com/d/1I19OKZUTWm1WreSkXrRqgw51H5N8vYL-=w900" alt="Wide view of the field during reset" loading="lazy" referrerpolicy="no-referrer"></button>
+      <button type="button" class="w4" data-full="https://lh3.googleusercontent.com/d/1Puxog9nEGnB4UhQo2Gz85a38QPHwaZKh=w1800" aria-label="View larger: Fuel piled up and ready for the next match"><img src="https://lh3.googleusercontent.com/d/1Puxog9nEGnB4UhQo2Gz85a38QPHwaZKh=w900" alt="Fuel piled up and ready for the next match" loading="lazy" referrerpolicy="no-referrer"></button>
+    </div>
+    <div class="albums">
+      <a href="https://photos.google.com/share/AF1QipMrMY8HgN22SHk1Yjf4Ynv98GFUGUnvikuWs5qV_OaY1Oz5A--1N9LlTDpPbAA5mQ?key=WFVydFd6V08wUG92ZXpTUWZTTVdWWWJ3ekJDWGx3" target="_blank" rel="noopener">Match photos album</a>
+      <a href="https://photos.app.goo.gl/PfYZmsMyG3FGkPTf7" target="_blank" rel="noopener">Pit photos by Henry Rosenberg</a>
+      <a href="https://drive.google.com/drive/folders/1UQTGG9rB0-U0g5cugSdib7Atafv3l6_R" target="_blank" rel="noopener">Full event folder on Google Drive</a>
+    </div>
+    <p class="credit">Photos by Henry Rosenberg and event volunteers.</p>
+  </div>
+</section>
+
+<section class="dark">
+  <div class="wrap">
+    <h2>How a REBUILT match is scored</h2>
+    <p class="lede">Every fuel ball that lands in your alliance's hub while it's active is worth a point. The catch is that the hubs take turns: during the four teleop shifts, only one alliance can score at a time.</p>
+    <div class="timeline" aria-label="Match timeline">
+      <div class="tl">
+        <div class="auto" style="flex:20">Auto<small>20 s</small></div>
+        <div style="flex:10">Transition<small>10 s</small></div>
+        <div style="flex:25">Shift 1<small>25 s</small></div>
+        <div style="flex:25">Shift 2<small>25 s</small></div>
+        <div style="flex:25">Shift 3<small>25 s</small></div>
+        <div style="flex:25">Shift 4<small>25 s</small></div>
+        <div class="end" style="flex:30">Endgame<small>30 s</small></div>
+      </div>
+      <div class="hubs" aria-hidden="true">
+        <div style="flex:20"><i class="dot on rd"></i><i class="dot on bl"></i></div>
+        <div style="flex:10"><i class="dot on rd"></i><i class="dot on bl"></i></div>
+        <div style="flex:25"><i class="dot off"></i><i class="dot on bl"></i></div>
+        <div style="flex:25"><i class="dot on rd"></i><i class="dot off"></i></div>
+        <div style="flex:25"><i class="dot off"></i><i class="dot on bl"></i></div>
+        <div style="flex:25"><i class="dot on rd"></i><i class="dot off"></i></div>
+        <div style="flex:30"><i class="dot on rd"></i><i class="dot on bl"></i></div>
+      </div>
+      <div class="tl-key"><span><i class="dot on rd"></i>Hub active</span><span><i class="dot off"></i>Hub off</span><span>Example where red won auto: the alliance that scores more fuel in auto has its hub turned off first.</span></div>
+    </div>
+    <div class="points">
+      <div>
+        <h3>Fuel</h3>
+        <table>
+          <tr><td>Ball in an active hub</td><td>1</td></tr>
+          <tr><td>Grace window after a hub turns off</td><td>3 s</td></tr>
+        </table>
+        <p class="muted" style="margin-top:12px">Balls that go into a hub while it's off score nothing.</p>
+      </div>
+      <div>
+        <h3>Tower climbs</h3>
+        <table>
+          <tr><td>Auto, Level 1</td><td>15</td></tr>
+          <tr><td>Endgame, Level 1</td><td>10</td></tr>
+          <tr><td>Endgame, Level 2</td><td>20</td></tr>
+          <tr><td>Endgame, Level 3</td><td>30</td></tr>
+        </table>
+      </div>
+      <div>
+        <h3>Fouls and ranking points</h3>
+        <table>
+          <tr><td>Minor foul, to opponent</td><td>5</td></tr>
+          <tr><td>Major foul, to opponent</td><td>15</td></tr>
+          <tr><td>Win / tie</td><td>3 / 1 RP</td></tr>
+          <tr><td>Energized: 100+ fuel</td><td>+1 RP</td></tr>
+          <tr><td>Supercharged: 360+ fuel</td><td>+1 RP</td></tr>
+          <tr><td>Traversal: 50+ tower points</td><td>+1 RP</td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="watchtower">
+  <div class="wrap wt-grid">
+    <div>
+      <h2>Watchtower FMS</h2>
+      <p class="lede">The hubs on the 10th Street field don't count balls, and an offseason event can't borrow FIRST's field system. So our team built its own.</p>
+      <p>Watchtower is a field management system that runs on one laptop over the venue WiFi. Cameras watch each hub opening, and a YOLO object-detection model counts every ball that goes in. Watchtower checks each count against the match clock to decide whether that alliance's hub was active, then adds climbs and fouls to produce the score.</p>
+      <ol class="flow">
+        <li><b>Scorekeeper starts the match</b><span>Watchtower builds the timeline of auto, transition, shifts, and endgame from that click.</span></li>
+        <li><b>Hub cameras count fuel</b><span>Each detected ball is logged with which hub it entered and when.</span></li>
+        <li><b>Refs log fouls from their phones</b><span>Minor and major buttons for each alliance, with the fouling team tagged.</span></li>
+        <li><b>The emcee calls the hub lights</b><span>Their phone shows who won auto and counts down to every hub change.</span></li>
+        <li><b>Scorekeeper reviews and commits</b><span>Counts can be corrected before a score is final. Committed results, rankings, and alliances are sent to The Blue Alliance automatically.</span></li>
+      </ol>
+      <div class="cta-row" style="margin-top:22px">
+        <a class="btn primary" href="https://github.com/arnan-bajaj/watchtower-fms" target="_blank" rel="noopener">View Watchtower on GitHub</a>
+        <a class="btn" href="https://watchtower.systemoverload.org" target="_blank" rel="noopener">Open watchtower.systemoverload.org</a>
+      </div>
+    </div>
+    <div>
+      <div class="shots">
+        <figure>
+          <img src="https://raw.githubusercontent.com/arnan-bajaj/watchtower-fms/main/docs/screenshots/display.png" alt="Watchtower field display showing the red and blue scores, the match clock, and which hub is active" loading="lazy">
+          <figcaption>Field display for the audience TV and stream</figcaption>
+        </figure>
+        <figure>
+          <img src="https://raw.githubusercontent.com/arnan-bajaj/watchtower-fms/main/docs/screenshots/ref.png" alt="Watchtower referee phone screen with minor and major foul buttons for each alliance" loading="lazy">
+          <figcaption>Referee phone</figcaption>
+        </figure>
+      </div>
+      <p class="credit">Screenshots use demo data.</p>
+      <div class="note">
+        <p><b>Free and open source.</b> Watchtower is MIT-licensed so any team can run its own REBUILT scrimmage. It also works without cameras: the scorekeeper can type fuel counts for each period instead.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="thanks">
+  <div class="wrap">
+    <h2>Thank you</h2>
+    <p class="lede">To Highlander Robotics (8033) and Piedmont Makers for opening up the 10th Street field, to every volunteer who refereed, reset the field, inspected robots, and kept the pits safe, and to the ten teams who came to play. See you at the next one.</p>
+    <div class="cta-row">
+      <a class="btn" href="https://www.systemoverload.org/get-involved" target="_top">Get involved with 6059</a>
+      <a class="btn" href="https://www.systemoverload.org/become-a-sponsor" target="_top">Sponsor the team</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer><div class="wrap">System Overload Robotics, FRC Team 6059, Livermore, CA</div></footer>
+
+<dialog id="lb" aria-label="Photo viewer">
+  <img id="lb-img" alt="">
+  <div class="bar"><span id="lb-n"></span><span><button type="button" id="lb-prev">Previous</button> <button type="button" id="lb-next">Next</button> <button type="button" id="lb-close">Close</button></span></div>
+</dialog>
+
+<script>
+(function(){
+  var btns=[].slice.call(document.querySelectorAll('.gallery button'));
+  var dlg=document.getElementById('lb'),img=document.getElementById('lb-img'),n=document.getElementById('lb-n'),cur=0;
+  if(!dlg.showModal){return;}
+  function show(i){cur=(i+btns.length)%btns.length;var b=btns[cur];img.src=b.dataset.full;img.alt=b.querySelector('img').alt;n.textContent=(cur+1)+' of '+btns.length;}
+  btns.forEach(function(b,i){b.addEventListener('click',function(){show(i);dlg.showModal();});});
+  document.getElementById('lb-prev').onclick=function(){show(cur-1)};
+  document.getElementById('lb-next').onclick=function(){show(cur+1)};
+  document.getElementById('lb-close').onclick=function(){dlg.close()};
+  dlg.addEventListener('click',function(e){if(e.target===dlg)dlg.close();});
+  dlg.addEventListener('keydown',function(e){if(e.key==='ArrowLeft')show(cur-1);if(e.key==='ArrowRight')show(cur+1);});
+})();
+</script>
+</body>
+</html>
